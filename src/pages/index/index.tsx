@@ -4,10 +4,12 @@ import { useEnv, useNavigationBar, useModal, useToast } from "taro-hooks";
 import logo from "./hook.png";
 
 import './index.scss'
+import { useState } from "react";
 
 const Index = () => {
   const env = useEnv();
-  const [_, { setTitle }] = useNavigationBar({ title: "Taro Hooks" });
+  const [title, setTitle] = useState('');
+  // const [_, { setTitle }] = useNavigationBar({ title: "Taro Hooks" });
   const [show] = useModal({
     title: "Taro Hooks!",
     showCancel: false,
